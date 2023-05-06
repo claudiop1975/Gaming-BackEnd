@@ -24,7 +24,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::order.order', ({ strapi }) => ({
     async paymentOrder(ctx){
-        const { token, products, idUser, AddressShipping } = ctx.request.body;
+        const { token, products, idUser, addressShipping } = ctx.request.body;
 
         let totalPayment = 0;
         products.forEach((product) => {
@@ -44,7 +44,7 @@ module.exports = createCoreController('api::order.order', ({ strapi }) => ({
             user: idUser,
             totalPayment,
             idPayment:charge.id,
-            AddressShipping,
+            addressShipping,
         }
 
         const model = strapi.contentTypes["api::order.order"];
