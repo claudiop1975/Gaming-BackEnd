@@ -1,5 +1,9 @@
 'use strict';
-const stripe = require("stripe")("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");
+
+require('dotenv').config();
+
+
+const stripe = require("stripe")(process.env.STRIPE_KEY);
 
 function calcDiscountPrice(price,discount ){
     if(!discount){

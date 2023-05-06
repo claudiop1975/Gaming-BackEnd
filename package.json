@@ -14,6 +14,7 @@
     "@strapi/plugin-users-permissions": "4.10.2",
     "@strapi/provider-upload-aws-s3": "^4.10.2",
     "@strapi/strapi": "4.10.2",
+    "dotenv": "^16.0.3",
     "pg": "8.8.0",
     "stripe": "^12.4.0"
   },
