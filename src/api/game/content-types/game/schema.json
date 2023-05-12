@@ -4,7 +4,8 @@
   "info": {
     "singularName": "game",
     "pluralName": "games",
-    "displayName": "Game"
+    "displayName": "Game",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -41,28 +42,28 @@
       "required": true
     },
     "cover": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "wallpaper": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "screenshots": {
+      "required": true,
       "allowedTypes": [
         "images"
-      ],
+      ]
+    },
+    "screenshots": {
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "releaseDate": {
       "type": "date",
@@ -81,6 +82,10 @@
     "No": {
       "type": "boolean",
       "default": false
+    },
+    "stock": {
+      "type": "integer",
+      "default": 1
     }
   }
 }
