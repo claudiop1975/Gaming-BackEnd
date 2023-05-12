@@ -67,6 +67,20 @@
     "releaseDate": {
       "type": "date",
       "required": true
+    },
+    "Ultimo": {
+      "type": "enumeration",
+      "enum": [
+        "Ultimo"
+      ]
+    },
+    "Si": {
+      "type": "boolean",
+      "default": true
+    },
+    "No": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
