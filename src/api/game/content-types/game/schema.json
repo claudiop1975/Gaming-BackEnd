@@ -69,23 +69,12 @@
       "type": "date",
       "required": true
     },
-    "Ultimo": {
-      "type": "enumeration",
-      "enum": [
-        "Ultimo"
-      ]
-    },
-    "Si": {
-      "type": "boolean",
-      "default": true
-    },
-    "No": {
-      "type": "boolean",
-      "default": false
-    },
     "stock": {
       "type": "integer",
-      "default": 1
+      "required": true,
+      "default": 1,
+      "min": 0,
+      "max": 30
     }
   }
 }

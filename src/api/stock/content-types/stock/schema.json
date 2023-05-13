@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stocks",
+  "info": {
+    "singularName": "stock",
+    "pluralName": "stocks",
+    "displayName": "Stock"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stock": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 50,
+      "default": 1
+    }
+  }
+}
