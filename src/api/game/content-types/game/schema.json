@@ -72,9 +72,11 @@
     "stock": {
       "type": "integer",
       "required": true,
+
       "default": 1,
       "min": 0,
       "max": 30
+
     }
   }
 }
