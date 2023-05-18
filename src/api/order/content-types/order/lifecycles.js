@@ -8,11 +8,22 @@ module.exports = {
             populate: { user: true },
         });
 
-        let games = result.products.map((product) => {
+        result.products.map(async (product) => {
+            const previous = await strapi.entityService.findOne('api::game.game', product.id, {
+                fields: ['stock']
+            });
+            if(previous.stock - product.quantity<0) throw Error('Insuficient Stock')
+            await strapi.entityService.update('api::game.game', product.id, {
+                data: {
+                    stock:previous.stock - product.quantity,
+                }
+            })})
+
+        let games = result.products.map( (product) => {
             return `<p style="margin-top: 8px; font-weight: bold;">Titulo: <span style="color: #ff5400; font-weight: bold;">${product.attributes.title}</span></p>    
             <p style="margin-top: 8px; font-weight: bold;">Precio: <span style="color: #ff5400; font-weight: bold;">${product.attributes.price}</span></p>
             <p style="margin-top: 8px; font-weight: bold;">Cantidad: <span style="color: #ff5400; font-weight: bold;">${product.quantity}</span></p>
-            <p style="margin-top: 8px; font-weight: bold;">Descuento: <span style="color: #ff5400; font-weight: bold;">${product.attributes.discount || 0}</span></p>
+            <p style="margin-top: 8px; font-weight: bold;">Descuento: <span style="color: #ff5400; font-weight: bold;">${product.attributes.discount || 0}</span></p>
     `
         })
 
